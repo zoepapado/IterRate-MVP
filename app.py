@@ -29,7 +29,7 @@ def login_box():
             st.session_state["role"] = user.role
             st.session_state["email"] = email
             st.session_state["pw"] = pw
-            st.experimental_rerun()
+            st.rerun()
         db.close()
 
 def ensure_seed():
@@ -245,4 +245,4 @@ st.sidebar.write("---")
 if st.sidebar.button("Sign out"):
     for k in ["user_id","role","email","pw"]:
         st.session_state.pop(k, None)
-    st.experimental_rerun()
+    st.rerun()
